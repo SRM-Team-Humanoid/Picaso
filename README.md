@@ -1,2 +1,3 @@
 # Picaso
-Robotic Arm with Ability to Draw
+Drawing Codes for Robotic Arms and Humanoids
+
