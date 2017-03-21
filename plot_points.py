@@ -46,6 +46,7 @@ points.extend(points2[::-1])
 i = 0
 for point in points:	
 	#if g[i] == 1:
+	print point
 	pygame.draw.circle(screen,black,point,0)
 	pygame.display.update()
 	#i+=1

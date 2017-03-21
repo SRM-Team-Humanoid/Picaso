@@ -7,12 +7,12 @@ import math
 import pygame
 import sys
 
-ob = open('xz.txt','r')
-x = [int(x) for x in ob.readline().split()]
+ob = open('X.txt','r')
+x = [int(float(x)) for x in ob.readline().split()]
 #x = x[:-45]
 ob.close()
-ob = open('yz.txt','r')
-y = [int(y) for y in ob.readline().split()]
+ob = open('Y.txt','r')
+y = [int(float(y)) for y in ob.readline().split()]
 #y = y[:-45]
 ob.close()
 coord = list(zip(x,y))
@@ -69,11 +69,11 @@ run = True
 oldcord = [0,0]
 
 x = list(dxl_io.get_present_position(ids)) 
-x[3] = -35
+x[3] = 35
 dxl_io.set_goal_position(dict(zip(ids, x)))
 time.sleep(0.5)
 g,h = map(coord[0][0],coord[0][1])
-angles = calc(g,h,-35)
+angles = calc(g,h,35)
 print(angles)
 dxl_io.set_goal_position(dict(zip(ids, angles)))
 time.sleep(0.5)
@@ -82,7 +82,7 @@ for cord in coord:
 		
 	if cord[0]-oldcord[0]>30 or cord[1]-oldcord[1]>30:
 		x = list(dxl_io.get_present_position(ids)) 
-		x[3] = -35
+		x[3] = 35
 		dxl_io.set_goal_position(dict(zip(ids, x)))
 		time.sleep(0.5)	
 	
@@ -92,7 +92,7 @@ for cord in coord:
 		#h = float("{0:.5f}".format(y))
 		print(str(x) + ' ' + str(y))
 		
-		angles = calc(x,y,-35)
+		angles = calc(x,y,35)
 		print(angles)
 		
 		dxl_io.set_goal_position(dict(zip(ids, angles)))
@@ -108,7 +108,7 @@ for cord in coord:
 	print(str(g) + ' ' + str(h))
 	
 				
-	angles = calc(g,h,-22)
+	angles = calc(g,h,22)
 	print(angles)
 	dxl_io.set_goal_position(dict(zip(ids, angles)))
 	time.sleep(0.01)

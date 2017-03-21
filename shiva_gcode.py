@@ -1,6 +1,6 @@
 import time
 def load_numbers():
-    filename = "shiva.txt"
+    filename = "Shiva4.txt"
     in_file = open(filename, "r")
     G = open('G.txt','a')
     X = open('X.txt','a')
@@ -38,6 +38,5 @@ def load_numbers():
     X.close()
     Y.close()
     in_file.close()
-
 load_numbers()
 

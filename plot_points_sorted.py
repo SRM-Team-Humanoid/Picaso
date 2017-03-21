@@ -4,13 +4,17 @@ import time
 import math
 import sys
 
-f = open('x7.txt','r')
-x = [int(x) for x in f.readline().split()]
+f = open('X.txt','r')
+x = [int(float(x)*5) for x in f.readline().split()]
+f.close()
+
+f = open('G.txt','r')
+g = [int(float(x)) for x in f.readline().split()]
 f.close()
 
 
-f = open('y7.txt','r')
-y = [int(y) for y in f.readline().split()]
+f = open('Y.txt','r')
+y = [int(float(y)*5) for y in f.readline().split()]
 f.close()
 
 white = (255,255,255)
@@ -50,6 +54,7 @@ while len(points)!=1:
 			sys.exit()
 
 point = points[0]
+print point
 pygame.draw.circle(screen,black,point,1)
 pygame.display.update()
 

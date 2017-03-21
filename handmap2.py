@@ -40,7 +40,7 @@ def calc(x,y,z):
 	theta1 = ((180/math.pi)*(math.acos(t)-math.acos(c/d))-90)
 	theta2 = -(180/math.pi)*(math.acos(b/(2*l1*l2)))
 	#print("Theta1 = " + str(theta1) + " Theta2 = " + str(theta2)) 
-	return theta1,theta2,0,z
+	return -theta1,-theta2,0,z
 
 dxl_io.set_moving_speed(dict(zip(ids, itertools.repeat(100))))
 
@@ -86,7 +86,7 @@ while run:
 		h = float("{0:.5f}".format(y))
 		print(str(g) + ' ' + str(h))
 	
-		angles = calc(g,h,-23)
+		angles = calc(g,h,23)
 		print(angles)
 
 		dxl_io.set_goal_position(dict(zip(ids, angles)))
@@ -103,7 +103,7 @@ while run:
 		h = float("{0:.5f}".format(y))
 		print(str(g) + ' ' + str(h))
 	
-		angles = calc(g,h,-50)
+		angles = calc(g,h,50)
 		print(angles)
 
 		dxl_io.set_goal_position(dict(zip(ids, angles)))
